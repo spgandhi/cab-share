@@ -1,0 +1,8 @@
+<ion-view title="Your phone number">
+  <ion-nav-buttons side="right">
+    <button ng-click="logger.login()" ng-disabled="!logger.phone || logger.phone.length === 0" class="button button-clear button-positive">Done</button>
+  </ion-nav-buttons>
+  <ion-content class="login">
+    <login-buttons></login-buttons>
+  </ion-content>
+</ion-view>
