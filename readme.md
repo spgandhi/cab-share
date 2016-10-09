@@ -12,7 +12,7 @@ This will install all the necessary packages which are also mentioned in package
 ### Install Meteor Packages
 Go inside the app directory and run the below command
 ~~~~
-meteor update
+meteor update --all-packages
 ~~~~
 This will install all the meteor packages (which a little different from node modules).
 
