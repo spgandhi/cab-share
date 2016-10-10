@@ -1,6 +1,6 @@
 import { Meteor } from 'meteor/meteor';
 import { Controller } from 'angular-ecmascript/module-helpers';
- 
+
 export default class Home extends Controller {
 
 	constructor(){
@@ -8,7 +8,7 @@ export default class Home extends Controller {
 		this.day = 'today';
 		this.something = this.getAllHours();
 		console.log(this.day);
-		console.log(this.something);	    
+		console.log(this.something);
 	}
 
 	autocompleteLoad(id){
@@ -33,6 +33,9 @@ export default class Home extends Controller {
   	}
 
   	addPost(){
+
+
+
   		post = {
   			origin : document.getElementById('origin').value,
   			destination : document.getElementById('destination').value,
@@ -41,6 +44,16 @@ export default class Home extends Controller {
   			flexible : true,
   			user: ''
   		}
+
+      // var geocoder = new google.maps.Geocoder();
+
+      // geocoder.geocode({'address': post.origin}, function(results, status) {
+      //     if (status === 'OK') {
+      //       console.log(results);
+      //     } else {
+      //       alert('Geocode was not successful for the following reason: ' + status);
+      //     }
+      //   });
 
   		Meteor.call('addPost', post, function(err, result){
   			if(!err)
@@ -51,5 +64,5 @@ export default class Home extends Controller {
   	}
 
 }
- 
+
 Home.$inject = ['$state', '$ionicPopup', '$log'];
